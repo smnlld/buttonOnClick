@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .Header {
+      text-align: center;
+      color: red;
+      font-size: 50px;
+    }
+    .buttonFirst {
+      background-color: #249628;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .buttonSecond {
+      background-color: #4c96af;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .buttonThird {
+      background-color: #adaf4c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .buttonFourth {
+      background-color: #a54caf;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .buttonFifth {
+      background-color: #af4c4c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .buttonSixth {
+      background-color: #af8b4c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+  <head>
+    <h1 class="Header">ON CLICK EVENTS</h1>
+  </head>
+  <body>
+    <div>
+      <button id="buttonFirst" class="buttonFirst" type="button">
+        ALERT AND PRINT YOUR NAME ON SCREEN
+      </button>
+      <button id="buttonSecond" class="buttonSecond" type="button">
+        I CAN COUNT YOUR MULT CLICKS
+      </button>
+      <button id="buttonThird" class="buttonThird" type="button">
+        CLICK ME TO HIDE M
+      </button>
+    </div>
+    <div>
+      <button id="buttonFourth" class="buttonFourth" type="button">
+        I CAN CHANGE THE HEADER COLOR
+      </button>
+      <button id="buttonFifth" class="buttonFifth" type="button">
+        I CAN CHANGE THE HEADER TEXT
+      </button>
+      <button id="buttonSixth" class="buttonSixth" type="button">
+        CHANGE HEADER FONT SIZE
+      </button>
+    </div>
+    <script>
+      //constructort and called using ID
+      const buttonFirst = document.getElementById("buttonFirst");
+      const buttonSecond = document.getElementById("buttonSecond");
+      const buttonThird = document.getElementById("buttonThird");
+      const buttonFourth = document.getElementById("buttonFourth");
+      const buttonFifth = document.getElementById("buttonFifth");
+      const buttonSixth = document.getElementById("buttonSixth");
+
+      //functions
+      console.log(buttonFirst);
+
+      buttonFirst.addEventListener("click", function () {
+        alert("You clicked me!");
+      });
+
+      //   buttonSecond.addEventListener("click", function (e) {
+      //     console.log(e);
+      //   });
+      buttonThird.addEventListener("click", function (e) {
+        buttonThird.style.backgroundColor = "white";
+      });
+      buttonFirst.addEventListener("click", function () {
+        const name = prompt("What is your name?");
+        document.body.innerHTML = "<h1> Hiiiii! " + name + "</h1>";
+      });
+      buttonSecond.addEventListener("click", (event) => {
+        buttonSecond.textContent = `Click count: ${event.detail}`;
+        console.log(`Click count: ${event.detail}`);
+      });
+
+      //second row
+      buttonFourth.addEventListener("click", (event) => {
+        document.querySelector(".Header").style.color = "blue";
+      });
+      buttonFifth.addEventListener("click", (event) => {
+        document.querySelector(".Header").innerHTML =
+          " HELLO I CAN CHANGE THE HEADER TEXT";
+      });
+      buttonSixth.addEventListener("click", (event) => {
+        document.querySelector(".Header").style.fontSize = "100px";
+      });
+      // hour
+      // if hour is between 6am and 12pm: good morning!
+      // if it is between 12 pm and 6pm good afternoon!
+      // otherwise goodmorning
+
+      let hour = 12;
+
+      if (hour >= 1 && hour < 12)
+        console.log("Good morning");
+       else if (hour >= 12 && hour < 18) 
+        console.log("Good Afternoon");
+     else if (hour >= 18 && hour <= 24) 
+        console.log("Good Evening");
+       else console.log("Invalid hour");
+    </script>
+  </body>
+</html>
